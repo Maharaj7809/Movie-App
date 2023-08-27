@@ -19,7 +19,6 @@ const getItem=async()=>{
     const response = await axios.get(apiUrl);
     const popularMovies = response.data.results;
     setMove(popularMovies);
-    console.log(popularMovies);
   } catch (error) {
     console.error('An error occurred:', error);
   }

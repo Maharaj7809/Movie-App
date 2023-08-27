@@ -5,16 +5,17 @@ import axios from 'axios';
 import SearchIcon from '@mui/icons-material/Search';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
+
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
-
+import { CircularProgress } from '@mui/material';
 const Search = () => {
    const [movie ,setmovie]=useState(null);
   const [movieData, setMovieData] = useState(null);
   const [flaga , setflaga]=useState(-1);
+  const [praveen , swati]=useState(null);
 
-  const TMDB_API_KEY = 'fe659372fbb274dea4b77b83b77b8663';
+
   
   const searchMedia = async (searchTerm) => {
       const options = {
@@ -31,9 +32,8 @@ const Search = () => {
       try {
         const response = await axios.request(options);
         setMovieData(response.data.d);
-        console.log({movieData});
-        
-  
+      
+
       } catch (error) {
         console.error(error);
       }
@@ -60,20 +60,29 @@ const Search = () => {
         width="50%"
         backgroundColor="#F2F2F2"
       >
+           
         <InputBase
           sx={{ ml: 1, flex: 1 }}
           placeholder="Search Movies.."
           onChange={(e) => setmovie(e.target.value)}
         />
-        <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
-
-        < SearchIcon  onClick={()=>searchMedia(movie)} />
   
+
+        <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
+      
+      
+  { 
+      (!movieData && praveen)  ?<CircularProgress size={20} />:<SearchIcon  onClick={()=>( searchMedia(movie),swati(movie) ,setMovieData(null))}/> 
+        }
+  
+        
       </Box>
       <Box display="flex" overflow='auto' >
       { movieData?.map((movi, indx) => (
    <Box  >
-    <Card sx={{ width: 300, height: 400 ,margin: 1}} >
+    <Card sx={{ width: 300, height: 400 ,margin: 1, transition: "transform 0.2s ease-in-out","&:hover": {
+      transform: "translateY(-10px)", 
+    }}} >
     <CardActions sx={{ display: 'flex', alignItems: 'center',justifyContent:'space-around' }} >
         <Button size="small" onClick={()=>setflaga(indx)}>Watch</Button>
         <Button size="small">Save</Button>
