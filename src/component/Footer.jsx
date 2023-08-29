@@ -53,7 +53,7 @@ function Footer() {
             Customer Care
           </Typography>
           <Typography mb="20px">Help Center</Typography>
-          <Typography mb="20px">Track Your Order</Typography>
+          <Typography mb="20px">Track Your Movie</Typography>
           <Typography mb="20px">Corporate & Bulk Purchasing</Typography>
           <Typography mb="20px">Returns & Refunds</Typography>
         </Box>
