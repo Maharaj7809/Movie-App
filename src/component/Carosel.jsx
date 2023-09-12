@@ -33,8 +33,9 @@ const getItem=async()=>{
 
   }, []); 
 
-  const isNonMobile = useMediaQuery("(min-width:600px)");
-
+  const isNonMobile = useMediaQuery("(min-width:900px)");
+  const heigh = isNonMobile ? "98vh" : "50vh";
+  const widt= isNonMobile ? "92.5vw" : "90vw";
   return (
     <Carousel
       infiniteLoop={true}
@@ -81,18 +82,19 @@ const getItem=async()=>{
          src= {`https://vidsrc.in/embed/movie?tmdb=${movi.id}`}
                 frameBorder="0"
                 style={{
-                  width: "92.5vw",
-                  height: "98vh",
+                  width: widt,
+                  height: heigh ,
                   objectFit: "cover",
                   backgroundAttachment: "fixed",
                 }}
+
                 allowFullScreen
               ></iframe>
               : <img
             src={`https://image.tmdb.org/t/p/w780${movi.poster_path}`}
             style={{
-              width: "92.5vw",
-              height: "98vh",
+              width: widt,
+              height: heigh ,
               backgroundAttachment: "fixed",
             }}
           />}
@@ -111,7 +113,7 @@ const getItem=async()=>{
             left={isNonMobile ? "10%" : "0"}
             right={isNonMobile ? undefined : "0"}
             margin={isNonMobile ? undefined : "0 auto"}
-            maxWidth={isNonMobile ? undefined : "240px"}
+            maxWidth={isNonMobile ? undefined : "80px"}
           >
             
         <Button variant="text" onClick={()=>( sbtn(movi.id))} style={{ color: 'white' }}>Watch</Button>

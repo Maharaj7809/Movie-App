@@ -1,13 +1,17 @@
 import React from 'react'
 import Carosel from "./Carosel"
+import {  useMediaQuery } from "@mui/material";
 import Footer from './Footer';
 import Search  from './Search';
-const Home = () => {
+
+const Home = ({ searchRef }) => {
+  
+  const isNonMobile = useMediaQuery("(min-width:1200px)");
   return (
     <div>
       <Carosel/>
-      <Search/>
-      <Footer/>
+      <Search searchRef={searchRef}/>
+     {isNonMobile? <Footer/>:''}
 
     </div>
   )

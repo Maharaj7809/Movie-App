@@ -1,4 +1,4 @@
-import { Badge, Box, IconButton } from "@mui/material";
+import { Badge, Box, IconButton ,useMediaQuery} from "@mui/material";
 import {
   PersonOutline,
   ShoppingBagOutlined,
@@ -7,9 +7,18 @@ import {
 } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 import { shades } from "../theme";
+import React, { useRef } from 'react';
 
+function Navbar({ searchRef }) {
+ 
+  const isNonMobile = useMediaQuery("(min-width:800px)");
+  
 
-function Navbar() {
+  const handleSearchClick = () => {
+   
+    searchRef.current.scrollIntoView({ behavior: 'smooth' });
+    searchRef.current.querySelector('input').focus();
+  };
 
   return (
     <Box
@@ -36,7 +45,7 @@ function Navbar() {
           sx={{ "&:hover": { cursor: "pointer" } }}
           color={shades.secondary[500]}
         >
-          MOVIE AMAZING
+        {isNonMobile? 'MOVIE AMAZING': 'MOVIE'}
         </Box>
         <Box
           display="flex"
@@ -44,8 +53,8 @@ function Navbar() {
           columnGap="20px"
           zIndex="2"
         >
-          <IconButton sx={{ color: "black" }}>
-            <SearchOutlined />
+          <IconButton sx={{ color: "black" }}  onClick={handleSearchClick}>
+            <SearchOutlined  />
           </IconButton>
           
           <IconButton sx={{ color: "black" }}>

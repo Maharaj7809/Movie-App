@@ -1,23 +1,24 @@
-import { Box, InputBase, Divider, Typography, IconButton } from "@mui/material";
+import { Box, InputBase, Divider, Typography, IconButton,useMediaQuery } from "@mui/material";
 import MarkEmailReadOutlinedIcon from "@mui/icons-material/MarkEmailReadOutlined";
-import { useState } from "react";
 import axios from 'axios';
 import SearchIcon from '@mui/icons-material/Search';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
-
+import React, { useState, useRef } from 'react';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import { CircularProgress } from '@mui/material';
-const Search = () => {
+const Search = ({ searchRef }) => {
    const [movie ,setmovie]=useState(null);
   const [movieData, setMovieData] = useState(null);
   const [flaga , setflaga]=useState(-1);
   const [praveen , swati]=useState(null);
-
+  const isNonMobile = useMediaQuery("(min-width:900px)");
 
   
+
   const searchMedia = async (searchTerm) => {
+   
       const options = {
         method: 'GET',
         url: 'https://imdb8.p.rapidapi.com/auto-complete',
@@ -40,7 +41,7 @@ const Search = () => {
     };
   
   return (
-  <Box>
+  <Box ref={searchRef}>
     <Box width="100%" margin="0px auto" textAlign="center" >
       <IconButton>
         <MarkEmailReadOutlinedIcon fontSize="large" />
@@ -57,13 +58,14 @@ const Search = () => {
         m="15px auto"
         display="flex"
         alignItems="center"
-        width="50%"
+        width= {isNonMobile ? "50%" : '65%'}
         backgroundColor="#F2F2F2"
       >
            
         <InputBase
-          sx={{ ml: 1, flex: 1 }}
+          sx={{ ml: 1, flex: 1 , fontSize: isNonMobile ? 'inherit' : '16px'}}
           placeholder="Search Movies.."
+        
           onChange={(e) => setmovie(e.target.value)}
         />
   
@@ -77,10 +79,10 @@ const Search = () => {
   
         
       </Box>
-      <Box display="flex" overflow='auto' >
+      <Box display= "flex" overflow='auto'  flexDirection={isNonMobile ? 'row' : 'column'} alignItems={isNonMobile ? 'flex-start' : 'center'}>
       { movieData?.map((movi, indx) => (
    <Box  >
-    <Card sx={{ width: 300, height: 400 ,margin: 1, transition: "transform 0.2s ease-in-out","&:hover": {
+    <Card sx={{  width: isNonMobile ? 300 : '90vw',  height: isNonMobile ? 400 : '40vh' ,margin: 1, transition: "transform 0.2s ease-in-out","&:hover": {
       transform: "translateY(-10px)", 
     }}} >
     <CardActions sx={{ display: 'flex', alignItems: 'center',justifyContent:'space-around' }} >
