@@ -49,9 +49,7 @@ const Search = ({ searchRef }) => {
 
       <Typography variant="h3">Subscribe And Search Recent Movies </Typography>
 
-      <Typography>
-        and receive $20 coupon for your first Subscription when you checkout
-      </Typography>
+
 
       <Box
         p="2px 4px"
