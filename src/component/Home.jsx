@@ -11,8 +11,7 @@ const Home = ({ searchRef }) => {
     <div>
       <Carosel/>
       <Search searchRef={searchRef}/>
-     {isNonMobile? <Footer/>:''}
-
+    
     </div>
   )
 }
