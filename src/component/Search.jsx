@@ -47,9 +47,7 @@ const Search = ({ searchRef }) => {
   return (
   <Box ref={searchRef}>
     <Box width="100%" margin="0px auto" textAlign="center" >
-      <IconButton>
-        <MarkEmailReadOutlinedIcon fontSize="large" />
-      </IconButton>
+      
 
       <Typography variant="h3">Subscribe And Search Recent Movies </Typography>
 
