@@ -82,7 +82,7 @@ const Search = ({ searchRef }) => {
       <Box display= "flex" overflow='auto'  flexDirection={isNonMobile ? 'row' : 'column'} alignItems={isNonMobile ? 'flex-start' : 'center'}>
       { movieData?.map((movi, indx) => (
    <Box  >
-    <Card sx={{  width: isNonMobile ? 290 : '90vw',  height: isNonMobile ? 300 : '40vh' ,margin: 1, transition: "transform 0.2s ease-in-out","&:hover": {
+    <Card sx={{  width: isNonMobile ? 285: '90vw',  height: isNonMobile ? 300 : '40vh' ,margin: 1, transition: "transform 0.2s ease-in-out","&:hover": {
       transform: "translateY(-10px)", 
     }}} >
     <CardActions sx={{ display: 'flex', alignItems: 'center',justifyContent:'space-around' }} >
