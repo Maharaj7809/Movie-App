@@ -61,15 +61,6 @@ function Navbar({ searchRef }) {
             <PersonOutline />
           </IconButton>
           
-            <IconButton
-              sx={{ color: "black" }}
-            >
-              <ShoppingBagOutlined />
-            </IconButton>
-         
-          <IconButton sx={{ color: "black" }}>
-            <MenuOutlined />
-          </IconButton>
         </Box>
       </Box>
     </Box>
