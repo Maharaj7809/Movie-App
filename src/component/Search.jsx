@@ -17,7 +17,7 @@ const Search = ({ searchRef }) => {
 
    
   useEffect(()=>{
-   setMovieData(movie);
+      searchMedia(movie);
   },[])
           
 
