@@ -9,7 +9,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import { CircularProgress } from '@mui/material';
 const Search = ({ searchRef }) => {
-   const [movie ,setmovie]=useState(null);
+   const [movie ,setmovie]=useState('openhaimer');
   const [movieData, setMovieData] = useState(null);
   const [flaga , setflaga]=useState(-1);
   const [praveen , swati]=useState(null);
