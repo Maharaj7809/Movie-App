@@ -15,7 +15,11 @@ const Search = ({ searchRef }) => {
   const [praveen , swati]=useState(null);
   const isNonMobile = useMediaQuery("(min-width:900px)");
 
-  
+   
+  useEffect(()=>{
+   setMovieData(movie);
+  },[])
+          
 
   const searchMedia = async (searchTerm) => {
    
