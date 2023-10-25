@@ -4,7 +4,7 @@ import axios from 'axios';
 import SearchIcon from '@mui/icons-material/Search';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import { CircularProgress } from '@mui/material';
