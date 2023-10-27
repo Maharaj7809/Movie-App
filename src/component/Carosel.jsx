@@ -110,7 +110,7 @@ const getItem=async()=>{
             backgroundColor="rgb(0, 0, 0, 0.4)"
             position="absolute"
             top="46%"
-            left={isNonMobile ? "10%" : "0"}
+            left={isNonMobile ? "45%" : "0"}
             right={isNonMobile ? undefined : "0"}
             margin={isNonMobile ? undefined : "0 auto"}
             maxWidth={isNonMobile ? undefined : "80px"}
