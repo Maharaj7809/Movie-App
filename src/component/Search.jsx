@@ -82,25 +82,23 @@ const Search = ({ searchRef }) => {
       <Box display= "flex" overflow='auto'  flexDirection={isNonMobile ? 'row' : 'column'} alignItems={isNonMobile ? 'flex-start' : 'center'}>
       { movieData?.map((movi, indx) => (
    <Box  >
-    <Card sx={{  width: isNonMobile ? 285: '90vw',  height: isNonMobile ? 300 : '40vh' ,margin: 1, transition: "transform 0.2s ease-in-out","&:hover": {
+    <Card sx={{  width: isNonMobile ? 260: '90vw',  height: isNonMobile ? 280 : '40vh' ,margin: 1, transition: "transform 0.2s ease-in-out","&:hover": {
       transform: "translateY(-10px)", 
     }}} >
-    <CardActions sx={{ display: 'flex', alignItems: 'center',justifyContent:'space-around' }} >
-        <Button size="small" onClick={()=>setflaga(indx)}>Watch</Button>
-        <Button size="small">Save</Button>
-      </CardActions>
-      
+       
    {flaga===indx ?(
     <CardMedia
+       onClick={()=>setflaga(indx)}
         component="iframe"
         frameBorder="0"
         allowFullScreen
-        style={{ width: '100%', height: '92%', objectFit: 'cover' }}
+        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
         src= {movi.qid==='movie'?`https://vidsrc.to/embed/movie/${movi.id}`:`https://vidsrc.to/embed/tv/${movi.id}`}
       />):(<CardMedia
+         onClick={()=>setflaga(indx)}
         component="img"
         alt=''
-        style={{ width: '100%', height: '92%', objectFit: 'cover' }}
+        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
         image= {`${movi?.i?.imageUrl}`}
       />)
    }
