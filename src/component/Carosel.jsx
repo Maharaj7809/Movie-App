@@ -43,14 +43,14 @@ const getItem=async()=>{
       showIndicators={false}
       showStatus={false}
       autoPlay={true} 
-      interval={5000}
+      interval={10000}
       renderArrowPrev={(onClickHandler, hasPrev, label) => (
         <IconButton
           onClick={onClickHandler}
           sx={{
             position: "absolute",
             top: "50%",
-            left: "0",
+            left: "45",
             color: 'blue',
             padding: "5px",
             zIndex: "10",
