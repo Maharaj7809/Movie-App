@@ -42,7 +42,6 @@ const getItem=async()=>{
       showThumbs={false}
       showIndicators={false}
       showStatus={false}
-      autoPlay={true} 
     
       renderArrowPrev={(onClickHandler, hasPrev, label) => (
         <IconButton
