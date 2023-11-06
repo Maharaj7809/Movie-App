@@ -38,12 +38,12 @@ const getItem=async()=>{
   const widt= isNonMobile ? "92.5vw" : "90vw";
   return (
     <Carousel
-      infiniteLoop={true}
+     
       showThumbs={false}
       showIndicators={false}
       showStatus={false}
       autoPlay={true} 
-      interval={10000}
+    
       renderArrowPrev={(onClickHandler, hasPrev, label) => (
         <IconButton
           onClick={onClickHandler}
