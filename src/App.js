@@ -5,6 +5,7 @@ import Navbar from "./component/Navbar";
 import Home from "./component/Home"
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import React, { useState,useEffect, useRef } from 'react';
+import axios from 'axios';
 
 const App = () => {
   const searchRef = useRef(null);
