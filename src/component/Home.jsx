@@ -14,9 +14,9 @@ const Home = ({ searchRef,move }) => {
  if (move) {
   slides = move.map((movi, indx) => {
     return movi.id === btn ? (
-      <iframe key={`iframe-${indx}`} src={`https://vidsrc.in/embed/movie?tmdb=${movi.id}`} frameBorder="0" allowFullScreen width={460} height={270}></iframe>
+      <iframe key={`iframe-${indx}`} src={`https://vidsrc.in/embed/movie?tmdb=${movi.id}`} frameBorder="0" allowFullScreen width={490} height={270}></iframe>
     ) : (
-      <img key={`img-${indx}`} src={`https://image.tmdb.org/t/p/w300${movi.poster_path}`} width={460} height={270} alt={`Movie ${indx + 1}`} onClick={() => (sbtn(movi.id))} />
+      <img key={`img-${indx}`} src={`https://image.tmdb.org/t/p/w300${movi.poster_path}`} width={490} height={270} alt={`Movie ${indx + 1}`} onClick={() => (sbtn(movi.id))} />
     );
   });
 }
