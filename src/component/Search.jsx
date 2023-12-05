@@ -49,8 +49,6 @@ const Search = ({ searchRef }) => {
     <Box width="100%" margin="0px auto" textAlign="center" >
       
 
-      <Typography variant="h3">Search Recent Movies </Typography>
-
 
 
       <Box
