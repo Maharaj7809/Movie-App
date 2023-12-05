@@ -40,7 +40,7 @@ const getItem=async()=>{
     <Carousel
      
       showThumbs={false}
-      showIndicators={false}
+      showIndicators={true}
       showStatus={false}
     
       renderArrowPrev={(onClickHandler, hasPrev, label) => (
