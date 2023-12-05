@@ -25,6 +25,7 @@ let slides = [];
  
   
   const isNonMobile = useMediaQuery("(min-width:1200px)");
+ 
   return (
     <div>
      {isNonMobile? <Carosel/>: <Carousel slides={slides} autoplay={true} interval={20000} />}
