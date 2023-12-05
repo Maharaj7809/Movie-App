@@ -24,7 +24,7 @@ let slides = [];
  }
  
   
-  const isNonMobile = useMediaQuery("(min-width:1200px)");
+   const isNonMobile = useMediaQuery("(min-width:900px)");
  
   return (
     <div>
