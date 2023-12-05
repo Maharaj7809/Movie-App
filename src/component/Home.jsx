@@ -26,8 +26,8 @@ const Home = ({ searchRef,move }) => {
  
   return (
     <div>
-     <div style={{ height:'42vh' }}>  {isNonMobile?  <Carousel slides={slides} autoplay={true} interval={20000} /> : <Carosel/>} </div>
-    
+{/*      <div style={{ height:'42vh' }}>  {isNonMobile?  <Carousel slides={slides} autoplay={true} interval={20000} /> : <Carosel/>} </div> */}
+    <Carousel slides={slides} autoplay={true} interval={20000} /> 
       <Search searchRef={searchRef}/>
     
     </div>
