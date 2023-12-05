@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useRef } from 'react';
 import Carosel from "./Carosel"
 import {  useMediaQuery } from "@mui/material";
 import Footer from './Footer';
@@ -7,24 +7,22 @@ import {Carousel} from '3d-react-carousal';
 import axios from 'axios';
 
 const Home = ({ searchRef,move }) => {
-
-let slides = [];
+ 
+ const [btn , sbtn]=useState(null);
+  let slides = [];
 
  if (move) {
-   slides = move.map((movi, indx) => (
-     <iframe
-       key={`iframe-${indx}`}
-       src={`https://vidsrc.in/embed/movie?tmdb=${movi.id}`}
-       frameBorder="0"
-       allowFullScreen
-       width={460}
-       height={270}
-     ></iframe>
-   ));
- }
- 
-  
-   const isNonMobile = useMediaQuery("(min-width:900px)");
+  slides = move.map((movi, indx) => {
+    return movi.id === btn ? (
+      <iframe key={`iframe-${indx}`} src={`https://vidsrc.in/embed/movie?tmdb=${movi.id}`} frameBorder="0" allowFullScreen width={460} height={270}></iframe>
+    ) : (
+      <img key={`img-${indx}`} src={`https://image.tmdb.org/t/p/w300${movi.poster_path}`} width={460} height={270} alt={`Movie ${indx + 1}`} onClick={() => (sbtn(movi.id))} />
+    );
+  });
+}
+
+
+ const isNonMobile = useMediaQuery("(min-width:900px)");
  
   return (
     <div>
