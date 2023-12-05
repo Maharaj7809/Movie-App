@@ -28,7 +28,7 @@ let slides = [];
  
   return (
     <div>
-     <div style={{ height:'45vh' }}>  {isNonMobile?  <Carousel slides={slides} autoplay={true} interval={20000} /> : <Carosel/>} </div>
+     <div style={{ height:'42vh' }}>  {isNonMobile?  <Carousel slides={slides} autoplay={true} interval={20000} /> : <Carosel/>} </div>
     
       <Search searchRef={searchRef}/>
     
