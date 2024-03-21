@@ -34,7 +34,7 @@ const getItem=async()=>{
   }, []); 
 
   const isNonMobile = useMediaQuery("(min-width:900px)");
-  const heigh = isNonMobile ? "100vh" : "40vh";
+  const heigh = isNonMobile ? "45vh" : "40vh";
   const widt= isNonMobile ? "50vw" : "50vw";
   return (
     <Carousel
